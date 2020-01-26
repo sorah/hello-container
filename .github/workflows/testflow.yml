@@ -1,0 +1,10 @@
+name: testflow-action
+on: [push]
+
+jobs:
+  build:
+    name: testflow-job
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: 'echo $GITHUB_SHA > REVISION'
