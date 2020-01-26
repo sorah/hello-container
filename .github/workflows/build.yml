@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - run: 'echo $GITHUB_SHA > REVISION'
       - name: build
         run: "docker build -t docker.pkg.github.com/${{ github.repository }}/app:${GITHUB_SHA} -f Dockerfile ."
       - name: login
